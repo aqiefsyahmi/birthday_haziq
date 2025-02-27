@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Developer!</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and general layout styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            padding: 20px;
+            overflow-y: auto; /* Allow scroll if content overflows */
+        }
+
+        /* Center the content */
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #ff8c00;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: textPulse 3s ease-in-out infinite;
+        }
+
+        /* Text animation */
+        @keyframes textPulse {
+            0%, 100% {
+                transform: translateY(0);
+                color: #ff8c00;
+            }
+            50% {
+                transform: translateY(-5px);
+                color: #00ff00;
+            }
+        }
+
+        button {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border: none;
+            background-color: #ff8c00;
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease-in-out;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        /* GIF container */
+        #birthdayGif {
+            display: none;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        /* Birthday message */
+        #birthdayMessage {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            opacity: 0;
+            animation: fadeInMessage 2s forwards;
+        }
+
+        @keyframes fadeInMessage {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .emoji {
+            font-size: 2rem;
+        }
+
+        .code {
+            font-size: 1.2rem;
+            background: #222;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* Media query for responsiveness */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            button {
+                font-size: 1rem;
+                padding: 12px 30px;
+            }
+
+            #birthdayMessage {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Happy Birthday, Fellow Developer!</h1>
+        <button onclick="showMessage()">Click Here to Reveal the Magic 🎉</button>
+
+        <!-- GIF Container -->
+        <div id="birthdayGif">
+            <img src="https://c.tenor.com/z_0qn5PgD0sAAAAd/tenor.gif" alt="Celebration GIF" width="350">
+        </div>
+
+        <!-- Birthday Message -->
+        <div id="birthdayMessage">
+            <h2 class="emoji">🎉🎂</h2>
+            <p>Hey buddy! Wishing you a fantastic year ahead filled with bug-free code, pull requests merged effortlessly, and successful deployments!</p>
+            <p>May your <span class="code">console.log()</span> always return the expected results, and may <span class="code">npm install</span> never fail you.</p>
+            <p>Cheers to many more years of coding, collaborating, and shipping great products together! <span class="emoji">🎈</span></p>
+        </div>
+    </div>
+
+    <script>
+        function showMessage() {
+            // Show the GIF and the birthday message
+            document.getElementById("birthdayGif").style.display = "block";
+            document.getElementById("birthdayMessage").style.display = "block";
+        }
+    </script>
+</body>
+</html>
